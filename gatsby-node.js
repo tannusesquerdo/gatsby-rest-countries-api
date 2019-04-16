@@ -1,7 +1,32 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = ({ graphql, actions }) => {
+  const path = require("path")
+  const { createPage } = actions
 
-// You can delete this file if you're not using it
+  return new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allCountries {
+          edges {
+            node {
+              alpha3Code
+            }
+          }
+        }
+      }
+    `).then(result => {
+      result.data.allCountries.edges.forEach(({ node }) => {
+        createPage({
+          path: `country/${node.alpha3Code.toLowerCase()}`,
+          component: path.resolve(`./src/templates/countryDetail.js`),
+          context: {
+            countryId: node.alpha3Code,
+          },
+        })
+      })
+    })
+    resolve()
+  }).catch(error => {
+    console.log(error)
+    reject()
+  })
+}

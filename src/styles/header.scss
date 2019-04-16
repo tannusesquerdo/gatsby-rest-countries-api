@@ -1,0 +1,27 @@
+.header {
+  padding: 20px 0;
+  background: var(--bg-elements);
+  color: var(--color-text);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 5px 0px;
+
+  .logo {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 23px;
+    vertical-align: middle;
+  }
+  .dark-mode-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 15px;
+    cursor: pointer;
+    outline: 0;
+    &:hover {
+      background: var(--bg-color);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+:root {
+  --bg-color: hsl(0, 0%, 98%);
+  --bg-elements: hsl(0, 0%, 100%);
+  --color-text: hsl(200, 15%, 8%);
+  --color-input: hsl(0, 0%, 52%);
+}
+[data-theme="dark"] {
+  --bg-color: hsl(207, 26%, 17%);
+  --bg-elements: hsl(209, 23%, 22%);
+  --color-text: hsl(0, 0%, 100%);
+  --color-input: hsl(0, 0%, 100%);
+}
+
+body {
+  color: var(--color-text);
+  background: var(--bg-color);
+  font-family: "Nunito Sans", sans-serif;
+
+  a {
+    color: var(--color-text);
+  }
+}
+.t-center {
+  text-align: center;
+}
