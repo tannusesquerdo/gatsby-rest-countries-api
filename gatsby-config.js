@@ -48,9 +48,10 @@ module.exports = {
       options: {
         headers: {
           "/*": [
-            "X-Frame-Options: ALLOW"
+            "X-Frame-Options: ALLOW-FROM https://beta.frontendmentor.io/"
           ]
-        }
+        },
+        mergeSecurityHeaders: false
       }
     },
   ],
