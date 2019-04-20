@@ -23,5 +23,12 @@
     &:hover {
       background: var(--bg-color);
     }
+    span {
+      vertical-align: middle;
+      padding-left: 5px;
+    }
+    svg {
+      vertical-align: middle;
+    }
   }
 }

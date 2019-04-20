@@ -26,7 +26,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <div className="app">
         <Header siteTitle={data.site.siteMetadata.title} />
         <>{children}</>
         <footer>
@@ -35,16 +35,39 @@ const Layout = ({ children }) => (
               <div className="col col--12 t-center">
                 <small>
                   <p>
-                    © {new Date().getFullYear()}, Built with
+                    © {new Date().getFullYear()}. Challenge by{" "}
+                    <a
+                      href="https://beta.frontendmentor.io/?ref=challenge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      frontend Mentor
+                    </a>
+                    . Coded by{` `}
+                    <a
+                      href="https://github.com/tannusesquerdo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      @tannusesquerdo
+                    </a>
+                    . Built with
                     {` `}
-                    <a href="https://www.gatsbyjs.org">Gatsby</a>
+                    <a
+                      href="https://www.gatsbyjs.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Gatsby
+                    </a>
+                    .
                   </p>
                 </small>
               </div>
             </div>
           </div>
         </footer>
-      </>
+      </div>
     )}
   />
 )

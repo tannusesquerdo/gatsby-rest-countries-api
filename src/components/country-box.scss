@@ -1,0 +1,48 @@
+.countries-list {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .country {
+    &-box {
+      background: var(--bg-elements);
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 10px 0px;
+      box-sizing: border-box;
+      overflow: hidden;
+      margin: 0 auto;
+      margin-bottom: 3em;
+      max-width: 290px;
+      transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+        background 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      &:hover {
+        box-shadow: var(--bg-shadow) 0px 0px 10px 0px;
+      }
+    }
+    &-flag {
+      min-height: 176.69px;
+      overflow: hidden;
+      position: relative;
+
+      > div {
+        background-position: center center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+    }
+    &-info {
+      padding: 24px;
+
+      &-name {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      &-infos {
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+  }
+}

@@ -6,21 +6,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-source-rest-countries-api`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `gatsby-rest-countries-api`,
+        short_name: `Where in the world?`,
         start_url: `/`,
         background_color: `#fafafa`,
         theme_color: `#fafafa`,
@@ -38,6 +30,14 @@ module.exports = {
             variants: [`300`, `600`, `800`],
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-138684903-1",
+        // Puts tracking script in the head instead of the body
+        head: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

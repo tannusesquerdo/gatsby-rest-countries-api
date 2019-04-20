@@ -1,14 +1,23 @@
 import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
+import { MdKeyboardBackspace } from "react-icons/md"
+import slug from "slug"
+import _ from "lodash"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../styles/country-detail.scss"
 
 export default class countryDetail extends Component {
+  borderName = code => {
+    return _.find(this.props.data.countries.edges, country => {
+      return country.node.alpha3Code === code
+    })
+  }
+
   render() {
-    const country = this.props.data.allCountries.edges[0]
-    console.log(country)
+    const country = this.props.data.country.edges[0]
+
     return (
       <Layout>
         <SEO
@@ -19,6 +28,7 @@ export default class countryDetail extends Component {
             `frontendmentor`,
             `rest-api`,
             `react`,
+            `${country.node.name}`,
           ]}
         />
         <section className="country-details">
@@ -29,7 +39,8 @@ export default class countryDetail extends Component {
                   <div className="col col--12">
                     <div className="btn-back-action">
                       <Link to="/" className="btn">
-                        Back
+                        <MdKeyboardBackspace />
+                        <span>Back</span>
                       </Link>
                     </div>
                   </div>
@@ -88,8 +99,25 @@ export default class countryDetail extends Component {
                           <div className="country-borders">
                             <p className="country-info-infos">
                               <strong>Border countries: </strong>
-                              {country.node.borders.join(", ")}
                             </p>
+                            <div className="borders">
+                              {country.node.borders.map((border, i) => {
+                                const { node } = this.borderName(border)
+                                return (
+                                  <Link
+                                    key={i}
+                                    to={`/country/${slug(node.name, {
+                                      lower: true,
+                                    })}`}
+                                    title={node.name}
+                                  >
+                                    <div className="country-border">
+                                      <span>{node.name}</span>
+                                    </div>
+                                  </Link>
+                                )
+                              })}
+                            </div>
                           </div>
                         </div>
                       )}
@@ -107,7 +135,7 @@ export default class countryDetail extends Component {
 
 export const GatsbyQuery = graphql`
   query countryDetails($countryId: String!) {
-    allCountries(filter: { alpha3Code: { eq: $countryId } }) {
+    country: allCountries(filter: { alpha3Code: { eq: $countryId } }) {
       edges {
         node {
           name
@@ -126,6 +154,14 @@ export const GatsbyQuery = graphql`
             name
           }
           borders
+        }
+      }
+    }
+    countries: allCountries {
+      edges {
+        node {
+          name
+          alpha3Code
         }
       }
     }

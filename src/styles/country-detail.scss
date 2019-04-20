@@ -1,5 +1,5 @@
 .country-details {
-  margin-top: 3em;
+  margin-top: 2em;
   .btn-back-action {
     margin-bottom: 3em;
     .btn {
@@ -19,11 +19,16 @@
       border-radius: 4px;
       border: none;
       text-decoration: none;
-      padding: 8px 40px;
+      padding: 8px 30px;
+      padding-left: 25px;
       transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
       &:hover {
         box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px 0px;
         color: var(--color-text);
+      }
+      svg {
+        font-size: 20px;
+        margin-right: 5px;
       }
     }
   }
@@ -47,6 +52,35 @@
     .country-info-infos {
       font-size: 16px;
       margin: 0px 0 6px 0;
+    }
+    .borders {
+      display: flex;
+      flex-wrap: wrap;
+      a {
+        text-decoration: none;
+      }
+      .country-border {
+        background-color: var(--bg-elements);
+        color: var(--color-text);
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 3px 0px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-bottom: 6px;
+        font-size: 13px;
+        min-width: 80px;
+        text-align: center;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0 5px;
+        max-width: 85px;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:hover {
+          box-shadow: var(--bg-shadow) 0px 0px 3px 0px;
+        }
+      }
     }
   }
 }

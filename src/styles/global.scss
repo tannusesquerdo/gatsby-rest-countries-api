@@ -2,13 +2,15 @@
   --bg-color: hsl(0, 0%, 98%);
   --bg-elements: hsl(0, 0%, 100%);
   --color-text: hsl(200, 15%, 8%);
-  --color-input: hsl(0, 0%, 52%);
+  --color-input: hsl(0, 0%, 42%);
+  --bg-shadow: hsl(0, 0%, 72%);
 }
 [data-theme="dark"] {
   --bg-color: hsl(207, 26%, 17%);
   --bg-elements: hsl(209, 23%, 22%);
   --color-text: hsl(0, 0%, 100%);
   --color-input: hsl(0, 0%, 100%);
+  --bg-shadow: hsl(200, 15%, 10%);
 }
 
 body {
@@ -22,4 +24,48 @@ body {
 }
 .t-center {
   text-align: center;
+}
+.container {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
+footer {
+  position: relative;
+  margin-top: auto;
+}
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5em;
+  .btn-load-mode {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: var(--bg-elements);
+    color: var(--color-text);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 5px 0px;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 300;
+    flex-shrink: 0;
+    line-height: 1.25;
+    -webkit-font-smoothing: antialiased;
+    white-space: nowrap;
+    font-size: 13px;
+    border-radius: 4px;
+    border: none;
+    text-decoration: none;
+    padding: 8px 30px;
+    padding-left: 25px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px 0px;
+      color: var(--color-text);
+    }
+  }
 }
