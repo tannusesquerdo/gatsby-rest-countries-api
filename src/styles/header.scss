@@ -10,6 +10,10 @@
     font-weight: 800;
     font-size: 23px;
     vertical-align: middle;
+    
+    @media screen and (max-width: 600px) {
+      font-size: 18px;
+    }
   }
   .dark-mode-btn {
     background: transparent;

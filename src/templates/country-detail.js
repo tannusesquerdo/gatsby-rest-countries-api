@@ -52,7 +52,7 @@ export default class countryDetail extends Component {
                   <div className="col col__lg--6">
                     <h1 className="country-name">{country.node.name}</h1>
                     <div className="flex">
-                      <div className="col--6">
+                      <div className="col--12 col__md--6 col__lg--6">
                         <div className="country-info">
                           <p className="country-info-infos">
                             <strong>Native Name: </strong>
@@ -76,7 +76,7 @@ export default class countryDetail extends Component {
                           </p>
                         </div>
                       </div>
-                      <div className="col--6">
+                      <div className="col--12 col__md--6 col__lg--6">
                         <div className="country-info">
                           <p className="country-info-infos">
                             <strong>Top Level Domain: </strong>
