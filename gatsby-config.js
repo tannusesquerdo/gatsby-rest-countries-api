@@ -47,12 +47,10 @@ module.exports = {
       resolve: `gatsby-plugin-netlify`,
       options: {
         headers: {
-          "/*": [
-            "X-Frame-Options: ALLOW-FROM https://beta.frontendmentor.io/"
-          ]
+          "/*": ["X-Frame-Options: ALLOW-FROM https://beta.frontendmentor.io/"],
         },
-        mergeSecurityHeaders: false
-      }
+        mergeSecurityHeaders: false,
+      },
     },
   ],
 }
