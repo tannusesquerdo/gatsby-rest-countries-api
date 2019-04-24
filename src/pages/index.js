@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component } from "react"
 import { graphql } from "gatsby"
 import chunk from "lodash/chunk"
 
@@ -12,41 +12,28 @@ import { createFilter } from "../components/utils"
 
 if (typeof window !== `undefined`) window.postsToShow = 12
 
-class IndexPage extends React.Component {
-  constructor(props) {
-    super(props)
-    let postsToShow = 12
-    if (typeof window !== `undefined`) {
-      postsToShow = window.postsToShow
-    }
-
-    this.state = {
-      searchTerm: ``,
-      filterKey: `name`,
-      filtered: [],
-      showingMore: postsToShow > 12,
-      postsToShow,
-    }
-    this.searchUpdated = this.searchUpdated.bind(this)
-    this.resetSearch = this.resetSearch.bind(this)
-    this.filterUpdated = this.filterUpdated.bind(this)
+class IndexPage extends Component {
+  state = {
+    searchTerm: ``,
+    filterKey: `name`,
+    filtered: [],
   }
 
-  searchUpdated(term) {
+  searchUpdated = term => {
     this.setState({ filterKey: `name`, searchTerm: term })
   }
 
-  filterUpdated(filter) {
+  filterUpdated = filter => {
     this.setState({ filterKey: `region`, searchTerm: filter })
   }
 
-  resetSearch() {
+  resetSearch = () => {
     this.setState({
       searchTerm: ``,
     })
   }
 
-  update() {
+  update = () => {
     const distanceToBottom =
       document.documentElement.offsetHeight -
       (window.scrollY + window.innerHeight)
@@ -64,6 +51,17 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
+    let postsToShow = 12
+
+    if (typeof window !== `undefined`) {
+      postsToShow = window.postsToShow
+    }
+
+    this.setState({
+      showingMore: postsToShow > 12,
+      postsToShow,
+    })
+
     window.addEventListener(`scroll`, this.handleScroll)
   }
 
