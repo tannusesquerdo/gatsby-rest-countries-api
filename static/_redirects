@@ -1,0 +1,2 @@
+# my manually set redirects
+/blog/* https://blog-staging.airsells.ca/blog/:splat 200!
