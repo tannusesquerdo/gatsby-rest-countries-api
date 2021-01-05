@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Tannus Esquerdo <tannusewrton@gmail.com>",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "gatsby": "^2.3.16",
     "gatsby-cli": "^2.5.9",
     "gatsby-image": "^2.0.37",
