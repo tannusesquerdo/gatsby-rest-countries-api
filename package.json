@@ -21,7 +21,7 @@
     "gatsby-source-graphql": "^2.0.18",
     "gatsby-transformer-sharp": "^2.1.17",
     "lodash": "^4.17.11",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
